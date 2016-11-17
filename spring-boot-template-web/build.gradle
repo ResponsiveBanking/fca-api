@@ -1,0 +1,29 @@
+buildscript {
+    repositories {
+        // Our nexus
+        maven {
+            url "https://buildtools.uk.capitalone.com/nexus/content/groups/uk_dev/"
+        }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'spring-boot-template'
+    version =  '0.1.0'
+}
+
+bootRun {
+    jvmArgs "-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005"
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-aop:${springBootVersion}") {
+        exclude group: "org.springframework.boot", module: "spring-boot-starter-logging"
+    }
+    compile("org.springframework.boot:spring-boot-starter-log4j2:${springBootVersion}")
+}

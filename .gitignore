@@ -1,0 +1,23 @@
+### Ignore log files in workspace
+logs/
+*/logs
+
+### Gradle
+.gradle/
+build/
+*/build
+
+#### Java
+*.class
+
+### IntelliJ
+/.idea
+*.iml
+
+
+### Package Files
+*.jar
+*.war
+
+# STS (Spring Tool Suite)
+.springBeans

@@ -1,0 +1,18 @@
+ext {
+    cucumberVersion = '1.2.5'
+}
+
+dependencies {
+    testCompile project(":spring-boot-template-web")
+    testCompile("info.cukes:cucumber-java:${cucumberVersion}")
+    testCompile("info.cukes:cucumber-spring:${cucumberVersion}")
+    testCompile("info.cukes:cucumber-junit:${cucumberVersion}")
+    testCompile("com.jayway.restassured:rest-assured:2.9.0")
+    testCompile("com.jayway.restassured:json-schema-validator:2.8.0")
+}
+
+test {
+    testLogging.showStandardStreams = true
+}
+
+test.onlyIf { project.hasProperty('acceptance-tests') }
