@@ -12,7 +12,10 @@ dependencies {
 }
 
 test {
-    testLogging.showStandardStreams = true
+    exclude 'com/capitalone/uk/**'
 }
 
-test.onlyIf { project.hasProperty('acceptance-tests') }
+task acceptanceTest(type: Test, dependsOn: test) {
+    description = 'Runs the acceptance test'
+    testLogging.showStandardStreams = true
+}

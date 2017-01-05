@@ -12,37 +12,37 @@
         "steps": [
           {
             "result": {
-              "duration": 63540903,
+              "duration": 90189273,
               "status": "passed"
             },
             "line": 4,
             "name": "the service is running",
             "match": {
-              "location": "StepDefinitions.theServiceIsRunning()"
+              "location": "GreetingStepDefinition.theServiceIsRunning()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 656109595,
+              "duration": 647657002,
               "status": "passed"
             },
             "line": 5,
             "name": "the greeting request is made",
             "match": {
-              "location": "StepDefinitions.theGreetingRequestIsMade()"
+              "location": "GreetingStepDefinition.theGreetingRequestIsMade()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 262965781,
+              "duration": 264770922,
               "status": "passed"
             },
             "line": 6,
             "name": "a successful response is returned",
             "match": {
-              "location": "StepDefinitions.aSuccessfulResponseIsReturned()"
+              "location": "GreetingStepDefinition.aSuccessfulResponseIsReturned()"
             },
             "keyword": "Then "
           }

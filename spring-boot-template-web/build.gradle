@@ -1,10 +1,4 @@
 buildscript {
-    repositories {
-        // Our nexus
-        maven {
-            url "https://buildtools.uk.capitalone.com/nexus/content/groups/uk_dev/"
-        }
-    }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
@@ -13,12 +7,8 @@ buildscript {
 apply plugin: 'spring-boot'
 
 jar {
-    baseName = 'spring-boot-template'
-    version =  '0.1.0'
-}
-
-bootRun {
-    jvmArgs "-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005"
+    baseName = rootProject.name
+    version =  rootProject.version
 }
 
 dependencies {

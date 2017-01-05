@@ -1,8 +1,8 @@
 package com.capitalone.uk.template.config.filters;
 
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 
 import java.io.IOException;
 
@@ -56,30 +56,15 @@ public class ApiLogServletFilter implements Filter {
         stringBuilder.append(httpStatusCode);
 
         stringBuilder.append(" | StatusDescription: ");
-        stringBuilder.append(resolveStatusDescription(httpStatusCode));
+        stringBuilder.append(HttpStatus.valueOf(httpResponse.getStatus()).getReasonPhrase());
 
         stringBuilder.append(" | RelativeURI: ");
         stringBuilder.append(httpRequest.getRequestURI());
 
         logger.info(stringBuilder.toString());
       } catch (Exception e) {
-        logger.error("Performance Handler Exception", e);
+        logger.error("ApiLogServletFilter Exception", e);
       }
     }
-  }
-
-  /**
-   * Resolves the status description.
-   */
-  private String resolveStatusDescription(int httpStatusCode) {
-    String value = null;
-    if (httpStatusCode >= 200 && httpStatusCode < 300) {
-      value = "SUCCESS";
-    } else if (httpStatusCode >= 500) {
-      value = "ERR_GENERAL_ERROR";
-    } else {
-      value = "CLIENT_ERROR";
-    }
-    return value;
   }
 }

@@ -30,24 +30,24 @@ formatter.step({
   "keyword": "Then "
 });
 formatter.match({
-  "location": "StepDefinitions.theServiceIsRunning()"
+  "location": "GreetingStepDefinition.theServiceIsRunning()"
 });
 formatter.result({
-  "duration": 63540903,
+  "duration": 90189273,
   "status": "passed"
 });
 formatter.match({
-  "location": "StepDefinitions.theGreetingRequestIsMade()"
+  "location": "GreetingStepDefinition.theGreetingRequestIsMade()"
 });
 formatter.result({
-  "duration": 656109595,
+  "duration": 647657002,
   "status": "passed"
 });
 formatter.match({
-  "location": "StepDefinitions.aSuccessfulResponseIsReturned()"
+  "location": "GreetingStepDefinition.aSuccessfulResponseIsReturned()"
 });
 formatter.result({
-  "duration": 262965781,
+  "duration": 264770922,
   "status": "passed"
 });
 });
