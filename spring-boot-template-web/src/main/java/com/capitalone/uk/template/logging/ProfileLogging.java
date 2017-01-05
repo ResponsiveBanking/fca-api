@@ -12,9 +12,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProfileLogging {
 
-  public static final String PROFILE_STRING = "{}.{} execution time: {} ms";
+  private static final String PROFILE_STRING = "{}.{} execution time: {} ms";
 
-  protected final Logger logger = LoggerFactory.getLogger("PerfLog");
+  private final Logger logger = LoggerFactory.getLogger("PerfLog");
 
   /**
    * Pointcut that picks out the execution of any public method.
@@ -40,9 +40,9 @@ public class ProfileLogging {
   /**
    * Method which intercepts the call and applies profiling for a given method, namely it will track the amount of time that a given method takes to execute.
    *
-   * @param proceedingJoinPoint
-   * @return
-   * @throws Throwable
+   * @param proceedingJoinPoint   JoinPoint with support for around method in aspectJ
+   * @return                      back to the method for execution
+   * @throws Throwable            any exception that occurs
    */
   @Around("profileBean() || profileMethod()")
   public Object doPublicProfiling(ProceedingJoinPoint proceedingJoinPoint) throws Throwable { //NOSONAR
@@ -54,10 +54,10 @@ public class ProfileLogging {
     finally {
       Long end = System.currentTimeMillis() - start;
 
-      Object[] parms = {proceedingJoinPoint.getTarget().getClass().toString(),
+      Object[] params = {proceedingJoinPoint.getTarget().getClass().toString(),
           proceedingJoinPoint.getSignature().getName(), end};
 
-      logger.info(PROFILE_STRING, parms);
+      logger.info(PROFILE_STRING, params);
     }
   }
 }

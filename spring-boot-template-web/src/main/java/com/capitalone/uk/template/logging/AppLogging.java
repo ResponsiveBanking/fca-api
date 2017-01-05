@@ -37,7 +37,7 @@ public class AppLogging {
     Logger logger = LoggerFactory.getLogger(joinPoint.getTarget().getClass());
     Logger systemLogger = LoggerFactory.getLogger(SYSTEM_LOG_FILE_LOGGER_NAME);
 
-    Pair<String, Object[]> pair = buildParms(AFTER_RETURNING, THROWING, joinPoint.getSignature().getName(), exception);
+    Pair<String, Object[]> pair = buildParams(joinPoint.getSignature().getName(), exception);
     logger.error(pair.getKey(), pair.getValue());
     if (exception.getCause() != null) {
       logger.error("Cause: " + exception.getCause());
@@ -45,13 +45,13 @@ public class AppLogging {
     systemLogger.error("Stack trace: ", exception);
   }
 
-  private Pair<String, Object[]> buildParms(String base, String additive, String signature, Object... params) {
+  private Pair<String, Object[]> buildParams(String signature, Object... params) {
     final Object[] loggingParams = new Object[params.length + 1];
     loggingParams[0] = signature;
-    final StringBuilder buffer = new StringBuilder(base);
+    final StringBuilder buffer = new StringBuilder(AFTER_RETURNING);
 
-    if(params.length>0){
-      buffer.append(additive);
+    if(params.length > 0) {
+      buffer.append(THROWING);
       System.arraycopy(params, 0, loggingParams, 1, params.length);
       for (int i = 0; i < params.length; i++) {
         buffer.append(" {} ");

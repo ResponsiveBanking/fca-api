@@ -4,7 +4,6 @@ ext {
 
 dependencies {
     testCompile project(":spring-boot-template-web")
-    testCompile("info.cukes:cucumber-java:${cucumberVersion}")
     testCompile("info.cukes:cucumber-spring:${cucumberVersion}")
     testCompile("info.cukes:cucumber-junit:${cucumberVersion}")
     testCompile("com.jayway.restassured:rest-assured:2.9.0")
@@ -12,7 +11,10 @@ dependencies {
 }
 
 test {
-    testLogging.showStandardStreams = true
+    exclude 'com/capitalone/uk/**'
 }
 
-test.onlyIf { project.hasProperty('acceptance-tests') }
+task acceptanceTest(type: Test, dependsOn: test) {
+    description = 'Runs the acceptance test'
+    testLogging.showStandardStreams = true
+}

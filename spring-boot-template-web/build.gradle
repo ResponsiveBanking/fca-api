@@ -1,10 +1,4 @@
 buildscript {
-    repositories {
-        // Our nexus
-        maven {
-            url "https://buildtools.uk.capitalone.com/nexus/content/groups/uk_dev/"
-        }
-    }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
@@ -12,13 +6,13 @@ buildscript {
 
 apply plugin: 'spring-boot'
 
-jar {
-    baseName = 'spring-boot-template'
-    version =  '0.1.0'
+ext {
+    swaggerVersion = '2.5.0'
 }
 
-bootRun {
-    jvmArgs "-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005"
+jar {
+    baseName = rootProject.name
+    version =  rootProject.version
 }
 
 dependencies {
@@ -26,4 +20,8 @@ dependencies {
         exclude group: "org.springframework.boot", module: "spring-boot-starter-logging"
     }
     compile("org.springframework.boot:spring-boot-starter-log4j2:${springBootVersion}")
+    compile("commons-io:commons-io:2.5")
+    compile("io.springfox:springfox-swagger-ui:${swaggerVersion}")
+    compile("io.springfox:springfox-swagger2:${swaggerVersion}")
+    testCompile("uk.org.lidalia:slf4j-test:1.1.0")
 }

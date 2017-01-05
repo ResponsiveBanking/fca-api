@@ -1,17 +1,23 @@
+group 'com.capitalone.uk.template'
+version '1.0-SNAPSHOT'
+
 subprojects {
+    buildscript {
+        repositories {
+            maven { url "https://buildtools.uk.capitalone.com/nexus/content/groups/uk_dev/" }
+        }
+    }
+
+    repositories {
+        maven { url "https://buildtools.uk.capitalone.com/nexus/content/groups/uk_dev/" }
+    }
+
     ext {
         springBootVersion = '1.4.1.RELEASE'
     }
 
     apply plugin: 'java'
     apply plugin: 'idea'
-
-    repositories {
-        // Our nexus
-        maven {
-            url "https://buildtools.uk.capitalone.com/nexus/content/groups/uk_dev/"
-        }
-    }
 
     sourceCompatibility = 1.8
     targetCompatibility = 1.8

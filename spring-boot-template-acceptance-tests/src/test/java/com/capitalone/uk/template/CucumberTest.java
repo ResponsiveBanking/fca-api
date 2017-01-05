@@ -6,9 +6,9 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(format = {"html:target/CucumberResults/html/cucumber-html-report",
-    "json:target/CucumberResults/json/cucumber-reports.json"},
-    features = "src/test/resources/features")
+@CucumberOptions(plugin = {"pretty", "html:build/cucumber"},
+    features = "src/test/resources/features",
+    glue = "com.capitalone.uk.template")
 public class CucumberTest {
 
 }
