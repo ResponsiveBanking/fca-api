@@ -1,7 +1,7 @@
 group 'com.capitalone.uk.template'
 version '1.0-SNAPSHOT'
 
-allprojects {
+subprojects {
     buildscript {
         repositories {
             maven { url "https://buildtools.uk.capitalone.com/nexus/content/groups/uk_dev/" }
@@ -12,10 +12,6 @@ allprojects {
         maven { url "https://buildtools.uk.capitalone.com/nexus/content/groups/uk_dev/" }
     }
 
-    buildDir = rootProject.buildDir
-}
-
-subprojects {
     ext {
         springBootVersion = '1.4.1.RELEASE'
     }
