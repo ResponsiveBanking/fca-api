@@ -7,8 +7,11 @@ logs/
 build/
 */build
 
+*/target
+
 #### Java
 *.class
+classes/
 
 ### IntelliJ
 /.idea
@@ -18,6 +21,7 @@ build/
 ### Package Files
 *.jar
 *.war
+*.pyc
 
 # STS (Spring Tool Suite)
 .springBeans

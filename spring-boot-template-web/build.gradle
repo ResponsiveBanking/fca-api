@@ -1,13 +1,16 @@
 buildscript {
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.2.1")
     }
 }
 
-apply plugin: 'spring-boot'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'org.sonarqube'
+apply plugin: "jacoco"
 
 ext {
-    swaggerVersion = '2.5.0'
+    swaggerVersion = '2.6.1'
 }
 
 jar {
@@ -15,11 +18,18 @@ jar {
     version =  rootProject.version
 }
 
+test {
+    finalizedBy jacocoTestReport
+}
+
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-aop:${springBootVersion}") {
         exclude group: "org.springframework.boot", module: "spring-boot-starter-logging"
     }
     compile("org.springframework.boot:spring-boot-starter-log4j2:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-security:${springBootVersion}") {
+        exclude group: "org.springframework.boot", module: "spring-boot-starter-logging"
+    }
     compile("commons-io:commons-io:2.5")
     compile("io.springfox:springfox-swagger-ui:${swaggerVersion}")
     compile("io.springfox:springfox-swagger2:${swaggerVersion}")

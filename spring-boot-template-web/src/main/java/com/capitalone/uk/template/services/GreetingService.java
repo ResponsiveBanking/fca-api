@@ -1,7 +1,5 @@
 package com.capitalone.uk.template.services;
 
-import com.capitalone.uk.template.models.Greeting;
-
 import org.springframework.stereotype.Service;
 
 @Service
