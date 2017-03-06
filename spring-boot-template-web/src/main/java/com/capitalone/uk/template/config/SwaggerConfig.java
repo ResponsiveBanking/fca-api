@@ -29,7 +29,7 @@ public class SwaggerConfig {
     return new ApiInfoBuilder()
         .title("Template")
         .description("Description")
-        .version("0.1")
+        .version("1.0.0")
         .build();
   }
 }
