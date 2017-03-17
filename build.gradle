@@ -1,4 +1,4 @@
-group 'com.capitalone.uk.template'
+group 'fca.sprint'
 version '1.0.0'
 
 subprojects {

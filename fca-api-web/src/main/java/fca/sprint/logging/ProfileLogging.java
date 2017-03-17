@@ -1,4 +1,4 @@
-package com.capitalone.uk.template.logging;
+package fca.sprint.logging;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -26,14 +26,14 @@ public class ProfileLogging {
   /**
    * This pointcut captures any bean with a class level profile attribute set.
    */
-  @Pointcut("within(@com.capitalone.uk.template.logging.annotations.Profile *)")
+  @Pointcut("within(@fca.sprint.logging.annotations.Profile *)")
   public void profileBean() {
   }
 
   /**
    * This pointcut captures any bean with a method level profile attribute set.
    */
-  @Pointcut("anyPublicMethod() && @annotation(com.capitalone.uk.template.logging.annotations.Profile)")
+  @Pointcut("anyPublicMethod() && @annotation(fca.sprint.logging.annotations.Profile)")
   public void profileMethod() {
   }
 

@@ -1,4 +1,4 @@
-package com.capitalone.uk.template.models;
+package fca.sprint.models;
 
 
 public class ErrorResponse {

@@ -1,2 +1,2 @@
-rootProject.name = 'spring-boot-template-project'
-include 'spring-boot-template-web', 'spring-boot-template-acceptance-tests'
+rootProject.name = 'fca-api'
+include 'fca-api-web'

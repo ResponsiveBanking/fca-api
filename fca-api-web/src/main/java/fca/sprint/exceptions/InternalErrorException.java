@@ -1,4 +1,4 @@
-package com.capitalone.uk.template.exceptions;
+package fca.sprint.exceptions;
 
 public class InternalErrorException extends RuntimeException {
   public InternalErrorException(String message) {

@@ -1,10 +1,10 @@
-package com.capitalone.uk.template.exceptions.handlers;
+package fca.sprint.exceptions.handlers;
 
 
-import com.capitalone.uk.template.exceptions.BadRequestException;
-import com.capitalone.uk.template.exceptions.InternalErrorException;
-import com.capitalone.uk.template.exceptions.NotFoundException;
-import com.capitalone.uk.template.models.ErrorResponse;
+import fca.sprint.exceptions.BadRequestException;
+import fca.sprint.exceptions.InternalErrorException;
+import fca.sprint.exceptions.NotFoundException;
+import fca.sprint.models.ErrorResponse;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

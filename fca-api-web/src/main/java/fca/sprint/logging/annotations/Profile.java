@@ -1,4 +1,4 @@
-package com.capitalone.uk.template.logging.annotations;
+package fca.sprint.logging.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

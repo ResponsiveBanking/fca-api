@@ -1,4 +1,4 @@
-package com.capitalone.uk.template.logging;
+package fca.sprint.logging;
 
 import org.apache.commons.lang3.tuple.Pair;
 import org.aspectj.lang.JoinPoint;
@@ -28,7 +28,7 @@ public class AppLogging {
   /**
    * This pointcut captures any bean with a class level logging attribute set.
    */
-  @Pointcut("within(@com.capitalone.uk.template.logging.annotations.Log *)")
+  @Pointcut("within(@fca.sprint.logging.annotations.Log *)")
   public void logBean() {
   }
 

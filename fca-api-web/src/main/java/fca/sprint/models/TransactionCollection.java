@@ -1,7 +1,16 @@
 package fca.sprint.models;
 
-/**
- * Created by mxz618 on 14/03/2017.
- */
+import java.util.List;
+
 public class TransactionCollection {
+
+  private List<Transaction> transactions;
+
+  public List<Transaction> getTransactions() {
+    return transactions;
+  }
+
+  public void setTransactions(List<Transaction> transactions) {
+    this.transactions = transactions;
+  }
 }

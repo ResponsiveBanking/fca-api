@@ -1,4 +1,4 @@
-package com.capitalone.uk.template.exceptions;
+package fca.sprint.exceptions;
 
 
 public class BadRequestException extends RuntimeException {

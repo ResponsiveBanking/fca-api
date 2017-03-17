@@ -1,7 +1,7 @@
-package com.capitalone.uk.template.controllers;
+package fca.sprint.controllers;
 
-import com.capitalone.uk.template.logging.annotations.Log;
-import com.capitalone.uk.template.logging.annotations.Profile;
+import fca.sprint.logging.annotations.Log;
+import fca.sprint.logging.annotations.Profile;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
