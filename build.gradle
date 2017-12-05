@@ -4,12 +4,12 @@ version '1.0.0'
 subprojects {
     buildscript {
         repositories {
-            maven { url "https://buildtools.uk.capitalone.com/nexus/content/groups/uk_dev/" }
+             mavenCentral()
         }
     }
 
     repositories {
-        maven { url "https://buildtools.uk.capitalone.com/nexus/content/groups/uk_dev/" }
+         mavenCentral()
     }
 
     ext {
